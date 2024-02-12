@@ -6,59 +6,205 @@
     <title>GitProject</title>
     <link rel="stylesheet" href="style.css">
 </head>
-<div class="wrapper">
-<header>Yeon's Git Starter Kit</header>
 <body>
-    <div class="sidebar">
-    <h2>Docs</h2>
-    <ul>
-        <li><a href="#"><i class="fas fa-home"></i>Setting Up the Environment</a></li>
-        <li><a href="#"><i class="fas fa-user"></i>Creating and Cloning a GitHub Repository</a></li>
-        <li><a href="#"><i class="fas fa-address-card"></i>Basic Git Operations in VS Code</a></li>
-        <li><a href="#"><i class="fas fa-project-diagram"></i>Basic Git Operations in VS Code</a></li>
-        <li><a href="#"><i class="fas fa-blog"></i>Branching with VS Code</a></li>
-        <li><a href="#"><i class="fas fa-address-book"></i>Working with Remote Repositories</a></li>
-        <li><a href="#"><i class="fas fa-map-pin"></i>Pull Requests and Code Reviews within VS Code</a></li>
-    </ul>
-    <div class="social_media">
-        <a href="#"><i class="fab fa-facebook-f"></i></a>
-        <a href="#"><i class="fab fa-twitter"></i></a>
-        <a href="#"><i class="fab fa-instagram"></i></a>
-    </div>
-</div>
-    <div class="main_content">
-        <div>
-            <div class="header">Setting Up the Environment</div>
-            <div class="info">
-                <div>Install Git and VS Code.
-                Configure Git within VS Code (user name, email).</div>
-            </div>
-            <div class="header">Creating and Cloning a GitHub Repository</div>
-            <div class="info">
-            <div>Create a new repository on GitHub.
-            Clone the repository using VS Code's integrated Git support.</div>
-            </div>
-            <div class="header">Creating and Cloning a GitHub Repository</div>
-            <div class="info">
-            <div>Perform basic Git operations: status, add, commit, push, and pull through the VS Code GUI.</div>
-            </div>
-            <div class="header">Creating and Cloning a GitHub Repository</div>
-            <div class="info">
-            <div>Use VS Code to create and switch between branches.
-            Understand the concept of branching for feature development or bug fixes.</div>
-            </div>
-            <div class="header">Creating and Cloning a GitHub Repository</div>
-            <div class="info">
-            <div>Add and manage remote repositories directly from VS Code.
-            Push to and pull from these remotes using the VS Code interface.</div>
-            </div>
-            <div class="header">Creating and Cloning a GitHub Repository</div>
-            <div class="info">
-            <div>Create pull requests using GitHub and VS Code.
-            Review and discuss pull requests.</div>
-            </div>
+    <div id="wrapper">
+        <div id="nav-wrapper">
+            <nav id="navbar">
+                <ol>
+                    <li><img src="./src/GitHubLogo.png" width="100px"></li>
+                    <li><a href="#git-settup">Setting Up the Environment</a></li>
+                    <li><a href="#git-repo">Creating and Cloning a GitHub Repository</a></li>
+                    <li><a href="#git-operation">Basic Git Operations in VS Code</a></li>
+                    <li><a href="#git-branch">Branching with VS Code</a></li>
+                </ol>
+            </nav>
         </div>
+        <header id="main-header">
+            <h1>Git Starter Kit</h1>
+        </header>
+    
+        <main id="main-doc">
+            <section id="git-settup" class="main-section">
+                <header>
+                    <h2>Setting Up the Environment</h2>
+                </header>
+                <article>
+                    <h3>Install Git and VS Code.
+                        Configure Git within VS Code (user name, email).</h3>
+    
+                    <h4>Installing on Linux</h4>
+                        <p>If you want to install the basic Git tools on Linux via a binary installer, you can generally do so through the package management tool that comes with your distribution. </p>
+                        <p>If you’re on Fedora (or any
+                        closely-related RPM-based distribution, such as RHEL or CentOS), you can use <code>dnf:</code></p>
+    
+                    <pre><code>$ sudo dnf install git-all</code>
+                    </pre>
+                    <p>If you’re on a Debian-based distribution, such as Ubuntu, try <code>apt:</code></p>
+
+                    <pre><code>$ sudo apt install git-all</code></pre>
+
+                    <h4>Installing on macOS</h4>
+                    <p>
+                        There are several ways to install Git on macOS. The easiest is probably to install the Xcode Command
+                        Line Tools. On Mavericks (10.9) or above you can do this simply by trying to run git from the
+                        Terminal the very first time.</p>
+    
+                    <p><code>$ git --version</code></p>
+                        <p>If you don’t have it installed already, it will prompt you to install it.
+                        If you want a more up to date version, you can also install it via a binary installer.</p> 
+    
+                    <h4>Installing on Windows</h4>
+                    <p>
+                        There are also a few ways to install Git on Windows. The most official build is available for download on the Git website.</p> 
+                        <p>Just go to <a href="https://git-scm.com/download/win"> https://git-scm.com/download/win</a> and the download will start
+                        automatically. Note that this is a project called Git for Windows, which is separate from Git
+                        itself;</p> 
+                        <h4>Installing VSCode</h4>
+                        <p>
+                            Just go to <a href="https://code.visualstudio.com"> https://code.visualstudio.com</a> and the download VSCode according to your OS. Note that the website will automatically notice your OS and give you the recommended version;
+                        </p>
+                <h3>Configure Git within VS Code (user name, email).</h3>
+                <p>First, open Terminal within VSCode.</p>
+                <p>Set your Username, and email. Type following command into the terminal replacing "YourName" and "YourEmail" to your actual Username and email</p>
+                <pre><code>git config --global user.name "Your Name"</code></pre>
+                <pre><code>git config --global user.email "YourEmail"</code></pre>
+                <p>You can verify that Git has been configured correctly by checking the global Git configuration
+                file. Type the following command:</p>
+                <pre><code>git config --global --list</code></pre>
+                </article>
+            </section>
+            <hr />
+            <section id="git-repo" class="main-section">
+                <header>
+                    <h2>Creating and Cloning a GitHub Repository</h2>
+                </header>
+                <article>
+                    <h3>Create a new repository on GitHub.</h3>
+                        <p>After creating files, go ahedad and click the Source control tab on VSCode</p>
+                        <p>Once you have configured with your GitHub account to your VScode, you should be able to publish your repository to GitHub</p>
+                        <img src="./src/NewRepo1.png" alt="NewRepo1" width="500" >
+                        <p>You might have to Commit the changes. We will cover that soon</p>
+                        <img src="./src/NewRepo3.png" alt="NewRepo3" width="500">
+                        <p>Once repository is publish, go on to GitHub</p>
+                        <img src="./src/CloneRepo1.png" alt="CloneRepo1" width="800" >
+                        <p>Go on to the repository you created</p>
+                        <img src="./src/CloneRepo2.png" alt="CloneRepo2" width="800" >
+                        <p>Copy the code URL</p>
+                        <img src="./src/CloneRepo3.png" alt="CloneRepo3" width="800" >
+                        <p>Paste the URL to the command list on top of VSCode</p>                    
+                </article>
+            </section>
+            <hr />
+    
+            <section id="git-operation" class="main-section">
+                <header>
+                    <h2>Creating and Cloning a GitHub Repository</h2>
+                </header>
+                <article>
+                    <h3>Perform basic Git operations: status, add, commit, push, and pull through the VS Code GUI.</h3><br>
+                    <h3>Git status</h4>
+                    <p>What Does git status Do?</p>
+                    <p>git status shows the current state of your Git working directory and staging area.
+                    When in doubt, run git status. This is always a good idea. The git status command only outputs information, it won't modify commits or changes in your local repository.</p>
+                    <p>How to Use git status</p>
+                    <ul>
+                        <p><code>git status</code>: Most often used in its default form, this shows a good base of information</p>
+                        <p><code>git status -s</code>: Give output in short format</p>
+                        <p><code>git status -v</code>: Shows more "verbose" detail including the textual changes of any uncommitted files</p>
+                    </ul><br>
+                    <img src="./src/GitStatus.png" alt="GitStatus" width="1000">
+                    <p>You might have to Commit the changes. We will cover that soon</p>
+                    <br>
+
+                    <h3>Git Add</h3>
+                    <p>What Does Git Add Do?</p>
+                    <p>The git add command adds new or changed files in your working directory to the Git staging area.
+                    git add is an important command - without it, no git commit would ever do anything. Sometimes, git add can have a
+                    reputation for being an unnecessary step in development. But in reality, git add is an important and powerful tool. git add allows you to shape history without changing how you work.</p>
+                    <p>How to Use git add</p>
+                    <ul>
+                        <p><code>git add "path"</code>: Stage a specific directory or file</p>
+                        <p><code>git add .</code>: Stage all files (that are not listed in the .gitignore) in the entire repository</p>
+                        <p><code>git add -p</code>: Interactively stage hunks of changes</p>
+                    </ul><br>
+                    <img src="./src/GitAdd.png" alt="GitAdd" width="800" height="300"><br>
+
+                    
+                    <h3>Git Commit</h3>
+                    <p>What Does Git Commit Do?</p>
+                    <p>git commit creates a commit, which is like a snapshot of your repository. These commits are snapshots of your entire repository at specific times. You should make new commits often, based around logical units of change. Over time, commits should tell a story of the history of your repository and how it came to be the way that it currently is.</p>
+                    <p>How Git Commit Works</p>
+                    <ul>
+                        <p><code>git commit</code>: This starts the commit process, but since it doesn't include a -m flag for the message, your default text editor will be opened for you to create the commit message.</p>
+                        <p><code>git commit -m "descriptive commit message"</code>: This starts the commit process, and allows you to include the commit message at the same time.</p>
+                        <p><code>git commit -am "descriptive commit message"</code>: In addition to including the commit message, this option allows you to skip the staging phase.</p>
+                    </ul><br>
+                    <img src="./src/GitCommit1.png" alt="GitCommit1" width="700" height="300"><br>
+                    <img src="./src/GitCommit2.png" alt="GitCommit2" width="700" height="300"><br>
+                    <br>
+
+                    <h3>Git Push</h3>
+                    <p>What Does Git Push Do?</p>
+                    <p>git push updates the remote branch with local commits. It is one of the four commands in Git that prompts interaction with the remote repository. You can also think of git push as update or publish.</p>
+                    <p>What Does git push Do?</p>
+                    <ul>
+                        <p>After you make and commit changes locally, you can share them with the remote repository using git push. Pushing changes to the remote makes your commits accessible to others who you may be collaborating with. This will also update any open pull requests with the branch that you're working on.</p>
+                        <p><code>git push -f</code>: Force a push that would otherwise be blocked, usually because it will delete or overwrite existing commits</p>
+                        <p><code>git push -u origin [branch]</code>: Useful when pushing a new branch, this creates an upstream tracking branch with a lasting relationship to your local
+                        branch</p>
+                        <p><code>git push --all</code>: Push all branches</p>
+                    </ul><br>
+                    <img src="./src/GitPush.png" alt="GitPush" width="500" height="300"><br><br>
+
+                    <h3>Git Pull</h3>
+                    <p>What Does git pull Do?</p>
+                    <p>git pull updates your current local working branch, and all of the remote tracking branches. It's a good idea to run git pull regularly on the branches you are working on locally.</p>
+                    <p>git pull should be used every day you interact with a repository with a remote, at the minimum.</p>
+                    <h4>How To Use git pull</h4>
+                    <ul>
+                        <p><code>git pull</code>: Update your local working branch with commits from the remote, and update all remote tracking branches.</p>
+                        <p><code>git pull --rebase</code>: Update your local working branch with commits from the remote, but rewrite history so any local commits occur after all new commits coming from the remote, avoiding a merge commit.</p>
+                        <p><code>git pull --force</code>: This option allows you to force a fetch of a specific remote tracking branch when using the refspec option that would otherwise not be fetched due to conflicts.</p>
+                        <p><code>git pull --all</code>: Fetch all remotes - this is handy if you are working on a fork or in another use case with multiple remotes.</p>
+                    </ul>
+                    <br>
+                    <img src="./src/GitPull.png" alt="GitPull" width="500" height="500"><br>
+                </article>
+            </section>
+            <hr />
+            <section id="git-branch" class="main-section">
+                <header>
+                    <h2>Branching with VScode</h2>
+                </header>
+                <article>
+                    <h3>Use VS Code to create and switch between branches. Understand the concept of branching for feature development or bug fixes.</h3>
+                        <h4>Creating a Branch:</h4>
+                        <p>Open your project in VS Code.Use the following command to create a new branch:</p>
+                        <pre><code>Copy code git checkout -b new-feature</code></pre>
+                       <p>Replace new-feature with the name you want to give to your new branch.</p>
+                        <h4>Switching Between Branches:</h4>
+                        <p>After creating the branch, you can switch between branches using the following command:</p>           
+                        <pre><code>git checkout "branch-name"</code></pre>
+                            <p>Replace "branch-name" with the name of the branch you want to switch to.</p>
+                            <p>You may Perform branching using VSCode interface following these step</p><br>
+                                                <h4>Step 1</h4><img src="./src/VSBranch1.png" alt="VSBranch1">
+                                                <br><h4>Step 2</h4><img src="./src/VSBranch2.png" alt="VSBranch2">
+                                                <br><h4>Step 3</h4><img src="./src/VSBranch3.png" alt="VSBranch3">
+                                                <br>
+                                <h4>Understanding Branching</h4>
+                                <p>Branching allows you to diverge from the main line of development and continue to work without affecting the main codebase.</p>
+                                <p>It's useful for feature development, bug fixes, or any other development tasks that require isolation from the main code
+                                until they are completed.</p>
+                                <p>Each branch represents an independent line of development, enabling multiple developers to work on different features
+                                simultaneously without interfering with each other's work.</p>
+                                <p>Once the work on a branch is completed and tested, it can be merged back into the main codebase (usually the main or master branch) using a pull request or merge operation.</p>
+                </article>
+            </section>
+        </main>
+        <footer id="footer">
+            <a href="https://github.com/git-guides"
+                target_"blank">Documentation source used for this project</a>
+        </footer>
     </div>
-</div>
+
 </body>
-</html>
